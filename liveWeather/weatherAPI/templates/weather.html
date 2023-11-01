@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Weather -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/weather.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <title>Weather Information</title>
+</head>
+<body class="container-xl flex justify-center ">
+    <div class="pt-10 flex-col">
+        <div class="text-center">
+            <h1 class="text-xl font-semibold p-4">Show Your Weather by Typing Your City Name</h1>
+            <input class="m-2 p-2 border-2 rounded-xl border-gray-500" type="text" id="cityInput" placeholder="Enter a city">
+            <button class="px-5 py-1 font-semibold rounded-full border-2 border-teal-700" id="searchButton">Search</button>
+        </div>
+
+        <div class="border-2 border-gray-200 rounded-lg mt-4 shadow-md bg-gray-100 bg-opacity-50" id="weatherInfo">
+            <img class="absolute w-[448px] h-[258px] opacity-100 rounded-lg -z-10" src="{% static 'images/background.jpeg' %}" alt="background Photo">
+            <div class="flex flex-col items-center pb-4">
+                <img src="{% static 'images/icon.svg' %}" alt="Weather Icon" class="w-16 h-16">
+                <h2 class="font-bold text-gray-800">Weather Information</h2>
+            </div>
+            <div class="text-black font-medium p-4">
+                <p>City: <span id="city"></span></p>
+                <p>Temperature: <span id="temperature"></span></p>
+                <p>Weather: <span id="weatherDescription"></span></p>
+                <p>Humidity: <span id="humidity"></span></p>
+                <p>Wind Speed: <span id="windSpeed"></span></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
